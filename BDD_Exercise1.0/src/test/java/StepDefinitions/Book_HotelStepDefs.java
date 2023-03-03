@@ -31,22 +31,22 @@ public class Book_HotelStepDefs {
 
         WebElement statDropdown3 = Constants.getDriver().findElement(By.id("room_nos"));
         Select dropdown3 = new Select(statDropdown3);
-        dropdown3.selectByVisibleText("One");
+        dropdown3.selectByValue("1");
 
 //      Select the arrival date and departure date
         Constants.getDriver().findElement(By.id("datepick_in")).clear();
-        Constants.getDriver().findElement(By.id("datepick_in")).sendKeys("25/06/2023");
+        Constants.getDriver().findElement(By.id("datepick_in")).sendKeys("27/06/2023");
         Constants.getDriver().findElement(By.id("datepick_out")).clear();
         Constants.getDriver().findElement(By.id("datepick_out")).sendKeys("28/06/2023");
 
 //      Select the number of adults per room and children per room
         WebElement statDropdown4 = Constants.getDriver().findElement(By.id("adult_room"));
         Select dropdown4 = new Select(statDropdown4);
-        dropdown4.selectByVisibleText("Two");
+        dropdown4.selectByValue("2");
 
         WebElement statDropdown5 = Constants.getDriver().findElement(By.id("child_room"));
         Select dropdown5 = new Select(statDropdown5);
-        dropdown5.selectByVisibleText("None");
+        dropdown5.selectByValue("0");
 
 //      Submit the form, select the hotel and continue to confirmation
         Thread.sleep(1000);
@@ -75,7 +75,7 @@ public class Book_HotelStepDefs {
 
         WebElement statDropdown2 = Constants.getDriver().findElement(By.id("cc_exp_year"));
         Select dropdown2 = new Select(statDropdown2);
-        dropdown2.selectByIndex(10);
+        dropdown2.selectByValue("2022");
 
 //      Insert the cvv number and book the hotel
         Constants.getDriver().findElement(By.id("cc_cvv")).sendKeys(pCvv);
