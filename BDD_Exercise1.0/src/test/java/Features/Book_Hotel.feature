@@ -6,7 +6,7 @@ Feature:Booking
   Background: Login successful
     Given a user is on the home page
     When  a user navigates to the Login page using "http://adactinhotelapp.com/"
-    And a user enter "sthembiso16" and "3755RP"
+    And a user enter "sthembiso26" and "3755RP"
     And a user clicks the login button
     Then a user has login successfully
 
