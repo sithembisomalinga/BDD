@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/BDD_Exercise1.0/BDD_Exercise1.0.iml" filepath="$PROJECT_DIR$/BDD_Exercise1.0/BDD_Exercise1.0.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/BDD_Exercise_STHE.iml" filepath="$PROJECT_DIR$/.idea/BDD_Exercise_STHE.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/CucumberBDD.iml" filepath="$PROJECT_DIR$/.idea/CucumberBDD.iml" />
     </modules>
   </component>
 </project>

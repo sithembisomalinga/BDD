@@ -6,10 +6,11 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = {"C:\\Users\\Sechaba.Chabedi\\Desktop\\BDD\\BDD_Exercise1.0\\src\\test\\java\\Features"},
+        features = {"C:\\Users\\Sithembiso.Malinga\\Desktop\\DevOps_Training\\CucumberBDD\\BDD_Exercise1.0\\src\\test\\java\\Features"},
         glue = {"StepDefinitions"},
-        plugin = {"html:target/cucumber.html"}
+        plugin = {"json:target/cucumber.json"}
 )
 
 public class TestRunner {
+   // plugin = {"json:target/cucumber.json"}
 }

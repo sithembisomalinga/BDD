@@ -1,18 +1,22 @@
 package StepDefinitions;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.model.Report;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
 
 public class LoginStepsDefs extends Constants {
+    ExtentReports extent;
+    ExtentTest test1;
     @Given("a user is on the home page")
     public void aUserIsOnTheHomePage() {
         // Invoke the browser and hit the url
@@ -26,6 +30,13 @@ public class LoginStepsDefs extends Constants {
     public void aUserNavigatesToTheLoginPageUsing(String sUrl) {
 
         getDriver().get(sUrl);
+        ExtentSparkReporter spark = new ExtentSparkReporter("C:\\Users\\Sithembiso.Malinga\\Desktop\\DevOps_Training\\CucumberBDD\\Reports\\report.html");
+        extent = new ExtentReports();
+        extent.attachReporter(spark);
+        test1 = extent.createTest("Login");
+        test1.log(Status.PASS, "User Fills in Login credentials");
+        test1.pass("User successfully logged in");
+
     }
 
     @And("a user enter {string} and {string}")
@@ -45,8 +56,17 @@ public class LoginStepsDefs extends Constants {
         Thread.sleep(3000);
         String welcomeMsg = getDriver().findElement(By.id("username_show")).getAttribute("value");
         System.out.println(welcomeMsg);
-        if (!getDriver().findElement(By.id("username_show")).isDisplayed())
+
+        if (!getDriver().findElement(By.id("location")).isDisplayed()){
+            test1.fail("Login is unsuccessful");
             Assert.fail();
+        } else {
+            test1.pass("Login is successful");
+        }
+
+        driver.close();
+        extent.flush();
+
     }
 
 

@@ -17,7 +17,7 @@ Feature:Booking
 
     Examples:
       |firstname| lastname| bill-address| card-number| cvv-number|
-      | Sthesh  | Kubheka |  1476 Cameroon Street, Ranburg, Johannesburg, 1111  | 1111111111111111  |  111 |
+      | Sthembiso  | Kubheka |  1476 Cameroon Street, Randburg, Johannesburg, 1111  | 1111111111111111  |  111 |
 
 
 
